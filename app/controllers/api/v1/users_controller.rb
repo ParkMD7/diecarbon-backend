@@ -22,6 +22,22 @@ class Api::V1::UsersController < ApplicationController
     render json: { user: UserSerializer.new(current_user) }, status: :accepted
   end
 
+  def login
+    @user = User.find_by(username: user_params[:username])
+    if @user
+      if @user.password == user_params[:password]
+        render json: { user: UserSerializer.new(current_user) }, status: :accepted
+      else
+        render json: { status: 'error', code: '3100', message: 'Username or password invalid'}
+      end
+    else
+      render json: { status: 'error', code: '3100', message: 'Username or password invalid'}
+    end
+  end
+
+##################################################################################
+##################################################################################
+##################################################################################
   private
 
   def user_params

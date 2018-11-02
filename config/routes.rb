@@ -4,7 +4,8 @@ Rails.application.routes.draw do
       resources :users
       resources :goals, only: [:index, :show]
 
-      post '/login', to: 'auth#create'
+      # post '/login', to: 'auth#create'
+      post '/login', to: 'users#login'
       get '/profile', to: 'users#profile'
     end
   end
