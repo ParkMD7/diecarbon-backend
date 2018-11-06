@@ -12,7 +12,7 @@ class Api::V1::AuthController < ApplicationController
       render json: { message: 'Invalid Username and/or Password' }, status: :unauthorized
     end
   end
- 
+
   private
 
   def user_login_params
