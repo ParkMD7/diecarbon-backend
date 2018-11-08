@@ -14,6 +14,7 @@ class Api::V1::GoalsController < ApplicationController
 
   def update
     @goal = Goal.find(params[:id])
+    # byebug
     user = User.find(update_goal_params[:user])
     @goal.users << user
     @goal.save
