@@ -14,6 +14,5 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :location, presence: true
   validates :picture, presence: true
-  validates :footprint, presence: true
 
 end

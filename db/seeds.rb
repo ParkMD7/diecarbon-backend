@@ -8,12 +8,12 @@ UserGoal.destroy_all
 
 puts "MAKING USERS"
 User.create([
-{name:Faker::BojackHorseman.character, email:Faker::Internet.free_email, location:'51 Grove St, New York, NY, 10014', username: 'user1', password_digest: 'google12345', footprint: 40000, picture: Faker::Avatar.image},
-{name:Faker::BojackHorseman.character, email:Faker::Internet.free_email, location:'361 W 17th St, New York, NY, 10011', username: 'user2', password_digest: 'google12345', footprint: 40000, picture: Faker::Avatar.image },
-{name:Faker::BojackHorseman.character, email:Faker::Internet.free_email, location: '1031 Lexington Ave, New York, NY 10021', username: 'user3', password_digest: 'google12345', footprint: 40000, picture: Faker::Avatar.image},
-{name:Faker::BojackHorseman.character, email:Faker::Internet.free_email, location: '238 Malcolm X Blvd, New York, NY 10027', username: 'user4', password_digest: 'google12345', footprint: 40000, picture: Faker::Avatar.image},
-{name:Faker::BojackHorseman.character, email:Faker::Internet.free_email, location: '33-12 23rd Ave, Astoria, NY 11105', username: 'user5', password_digest: 'google12345', footprint: 40000, picture: Faker::Avatar.image},
-{name:Faker::BojackHorseman.character, email:Faker::Internet.free_email, location: '514 Union St, Brooklyn, NY 11215', username: 'user10', password_digest: 'google12345', footprint: 40000, picture: Faker::Avatar.image}
+{name:Faker::BojackHorseman.character, email:Faker::Internet.free_email, location:'51 Grove St, New York, NY, 10014', username: 'user1', password_digest: 'google12345', picture: Faker::Avatar.image},
+{name:Faker::BojackHorseman.character, email:Faker::Internet.free_email, location:'361 W 17th St, New York, NY, 10011', username: 'user2', password_digest: 'google12345', picture: Faker::Avatar.image },
+{name:Faker::BojackHorseman.character, email:Faker::Internet.free_email, location: '1031 Lexington Ave, New York, NY 10021', username: 'user3', password_digest: 'google12345', picture: Faker::Avatar.image},
+{name:Faker::BojackHorseman.character, email:Faker::Internet.free_email, location: '238 Malcolm X Blvd, New York, NY 10027', username: 'user4', password_digest: 'google12345', picture: Faker::Avatar.image},
+{name:Faker::BojackHorseman.character, email:Faker::Internet.free_email, location: '33-12 23rd Ave, Astoria, NY 11105', username: 'user5', password_digest: 'google12345', picture: Faker::Avatar.image},
+{name:Faker::BojackHorseman.character, email:Faker::Internet.free_email, location: '514 Union St, Brooklyn, NY 11215', username: 'user10', password_digest: 'google12345', picture: Faker::Avatar.image}
 ])
 puts 'DONE MAKING USERS'
 
