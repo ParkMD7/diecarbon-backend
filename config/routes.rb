@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       post '/login', to: 'auth#create'
       # post '/login', to: 'users#login'
       get '/profile', to: 'users#profile'
+      post '/mailer', to: 'users#mailer'
     end
   end
 end

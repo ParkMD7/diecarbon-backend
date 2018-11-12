@@ -47,6 +47,12 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
+  def mailer
+    @user = User.create(user_params)
+    if @user.valid?
+      UserMailer.email_congressperson(@user).deliver_now
+  end
+
 ##################################################################################
 ##################################################################################
 ##################################################################################
