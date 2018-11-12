@@ -1,6 +1,6 @@
 class Api::V1::GoalsController < ApplicationController
   # make sure to skip the before_action :authorized coming from ApplicationController
-  skip_before_action :authorized, only: [:index, :show, :create, :update]
+  skip_before_action :authorized, only: [:index, :show, :create, :update, :destroy]
 
   def index
     @goals = Goal.all
@@ -17,6 +17,15 @@ class Api::V1::GoalsController < ApplicationController
     # byebug
     user = User.find(update_goal_params[:user])
     @goal.users << user
+    @goal.save
+    render json: @goal, status: :ok
+  end
+
+  def destroy
+    @goal = Goal.find(params[:id])
+    byebug
+    user = User.find(update_goal_params[:user])
+    @goal.users.delete(user)
     @goal.save
     render json: @goal, status: :ok
   end
