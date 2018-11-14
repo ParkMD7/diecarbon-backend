@@ -61,13 +61,13 @@ Rails.application.configure do
   #ActionMailer::Base.smtp_settings = {
     address: "smtp.gmail.com",
     port: 587,
-    domain: "mail.gmail.com",
+    # domain: "mail.gmail.com",
     authentication: "plain",
     enable_starttls_auto: true,
     #user_name: ENV["GMAIL_USERNAME"],
-    user_name: "DieCarbonApp@gmail.com",
+    user_name: Rails.application.secrets.email_user_name,
     #password: ENV["GMAIL_PASSWORD"]
-    password: "HelloWorld1"
+    password: Rails.application.secrets.email_password
   }
 
   config.action_mailer.default_url_options = { host: "localhost",  port:"3000"}

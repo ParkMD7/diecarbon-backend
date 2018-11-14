@@ -1,14 +1,14 @@
 class UserMailer < ApplicationMailer
   default from: 'diecarbonapp@gmail.com'
+  # layout "mailer"
 
-  layout "mailer"
 
   def email_congressperson(message)
     #byebug
     # @user = User.find(params[:id])
     @message = message
-  #   @specialtext = "test"
-    mail(to: 'parkermdinsmore@gmail.com', subject: 'My Carbon Footprint Impact', body: @message)
+    @specialtext = "test"
+    mail(to:'parkermdinsmore@gmail.com', subject:'My Carbon Footprint Impact', body:"#{@message}")
   end
 
 # kirsten_gillibrand@gillibrand.senate.gov
