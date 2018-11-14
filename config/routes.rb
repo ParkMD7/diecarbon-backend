@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       # post '/login', to: 'users#login'
       get '/profile', to: 'users#profile'
       post '/mailer', to: 'users#mailer'
+      patch '/goals/:id/unsubsribe', to: 'goals#unsubsribe'
     end
   end
 end

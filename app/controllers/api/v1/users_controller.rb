@@ -1,7 +1,7 @@
 class Api::V1::UsersController < ApplicationController
   # make sure to skip the before_action :authorized coming from ApplicationController
   # skip_before_action :authorized, only: [:create]
-  skip_before_action :authorized, only: [:index, :create, :show, :update]
+  skip_before_action :authorized, only: [:index, :create, :show, :update, :mailer]
 
 
   def index
@@ -48,9 +48,11 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def mailer
-    @user = User.create(user_params)
-    if @user.valid?
-      UserMailer.email_congressperson(@user).deliver_now
+    @user = User.find(params[:id])
+    message = params[:message]
+    #byebug
+    UserMailer.email_congressperson(message).deliver_now
+
   end
 
 ##################################################################################
@@ -59,7 +61,7 @@ class Api::V1::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :username, :password, :picture, :email, :location)
+    params.require(:user).permit(:id, :name, :username, :password, :picture, :email, :location, :message)
   end
 
 end

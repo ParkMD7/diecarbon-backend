@@ -1,10 +1,14 @@
 class UserMailer < ApplicationMailer
-  default from: 'from@example.com'
+  default from: 'diecarbonapp@gmail.com'
 
-  def email_congressperson
-    @user = User.find(params[:id])
-    @specialtext = 'This is a test email'
-    mail(to: 'parkermdinsmore@gmail.com', subject: 'My Carbon Footprint Impact')
+  layout "mailer"
+
+  def email_congressperson(message)
+    #byebug
+    # @user = User.find(params[:id])
+    @message = message
+  #   @specialtext = "test"
+    mail(to: 'parkermdinsmore@gmail.com', subject: 'My Carbon Footprint Impact', body: @message)
   end
 
 # kirsten_gillibrand@gillibrand.senate.gov
@@ -12,10 +16,10 @@ class UserMailer < ApplicationMailer
 ##################################################################################
 ##################################################################################
 ##################################################################################
-  private
-
-  def user_params
-    params.require(:user).permit(:name, :username, :password, :picture, :email, :location)
-  end
+  # private
+  #
+  # def user_params
+  #   params.require(:user).permit(:name, :username, :password, :picture, :email, :location)
+  # end
 
 end
